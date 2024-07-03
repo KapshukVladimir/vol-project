@@ -1,0 +1,133 @@
+@import "vars";
+@import "mixins";
+
+.icon-base {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
+
+.vol-input-field {
+  width: 100%;
+
+  &-wrapper {
+    position: relative;
+
+    &:has(.vol-input.password) {
+      & .icon {
+        @extend .icon-base;
+
+        right: 15px;
+        padding: 8px;
+        opacity: .5;
+      }
+    }
+
+    & .input-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:has(.input-icon) {
+      & .vol-input {
+        padding-left: 40px;
+      }
+    }
+  }
+
+  &:has(.vol-input.ng-touched.ng-invalid) {
+    & .vol-input-field-error {
+      display: flex;
+    }
+
+    & .vol-input-error-length {
+      color: red;
+    }
+  }
+}
+.vol-input {
+  @include font-base(14px, 500, 19px, normal, $onest);
+
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid $grey-2;
+  border-radius: 5px;
+  color: $black-2;
+  background: $white;
+  outline: none;
+
+  &.search {
+    padding: 3px 5px;
+    border: none !important;
+
+    &:focus {
+      border: none !important;
+
+      &::placeholder {
+        color: $grey-2;
+      }
+    }
+  }
+
+  &.discount {
+    width: 60px;
+    height: 32px;
+    padding-left: 5px;
+  }
+
+  &:read-only {
+    //background: $input-not-editable-color !important;
+    pointer-events: none;
+  }
+
+  &::placeholder {
+    color: $grey-2;
+  }
+
+  &:focus {
+    border: 1px solid $black-1 !important;
+    outline: none;
+    color: $black-1;
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+
+  &.ng-touched.ng-invalid {
+    border-color: $red !important;
+    color: $red !important;
+    background: rgba(222, 74, 94, 0.1) !important;
+
+    &::placeholder {
+      color: $red !important;
+    }
+  }
+}
+
+.vol-input-error {
+  @include font-base(12px, 400, 19px, normal, $onest);
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: $red;
+  width: 100%;
+  margin-right: 8px;
+  padding: 2px 0 0 5px;
+
+  & .ai-input-field-error {
+    display: none;
+    flex: 1;
+  }
+
+  & .ai-input-error-length {
+    color: #000;
+  }
+}

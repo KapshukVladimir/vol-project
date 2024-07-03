@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-
-import { AiIcon } from './ai-icons';
+import { IVolIcon } from './coa-icons';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AiIconsRegistryService {
+export class VolIconsRegistryService {
   private registry = new Map<string, string>();
 
-  public registerIcons(icons: AiIcon[]): void {
-    icons.forEach((icon: AiIcon) => this.registry.set(icon.name, icon.data));
+  public registerIcons(icons: IVolIcon[]): void {
+    icons.forEach((icon: IVolIcon) => this.registry.set(icon.name, icon.data));
   }
 
   public getIcon(iconName: string): string | undefined {

@@ -1,8 +1,7 @@
 @import "vars";
 @import "mixins";
 
-
-.coa-button {
+.vol-button {
   @include font-base(15px, 600, 20px, normal, $onest);
 
   display: flex;
@@ -16,4 +15,11 @@
   color: $white;
   transition: all .2s ease-in;
   cursor: pointer;
+}
+
+.vol-button.transparent {
+  @include font-base(12px, 400, 16.8px, normal, $onest);
+
+  background-color: transparent;
+  color: #526EFF;
 }

@@ -1,0 +1,28 @@
+@import "../../shared/styles/index";
+
+.header {
+  padding: 18px 30px;
+  background-color: $white;
+  &__actions {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  &__profile {
+
+  }
+  &__img, img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+  }
+
+  &__action-item {
+    margin-right: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

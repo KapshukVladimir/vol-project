@@ -1,0 +1,79 @@
+@import "vars";
+@import "mixins";
+
+.login, .registration {
+  width: 100%;
+
+  &__wrapper {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo, &__logo img {
+    width: 27px;
+    height: 34px;
+  }
+
+  &__btn button {
+    padding: 10px 33.5px;
+    width: 120px;
+    background-color: $red;
+  }
+
+  &__form-wrapper {
+    max-width: 344px;
+    margin: 117px auto 0;
+  }
+
+  &__form-title {
+    @include font-base(24px, 500, 34.8px, normal, $onest);
+
+    margin-bottom: 24px;
+    color: $black-1;
+    text-align: center;
+  }
+
+  &__form {
+    margin-bottom: 32px;
+  }
+
+  &__form-field {
+    margin-bottom: 16px;
+  }
+
+  &__form-field-label {
+    @include font-base(14px, 400, 19.6px, normal, $onest);
+
+    margin-bottom: 8px;
+  }
+
+  &__form-field-input {
+    width: 314px; // todo заменить на проценты
+  }
+
+  &__login-btn {
+    margin-bottom: 12px;
+  }
+
+  &__login-btn button {
+    width: 100%;
+    padding: 10px;
+  }
+  &__change-page {
+    display: flex;
+    justify-content: center;
+
+    & p {
+      @include font-base(12px, 400, 16.8px, normal, $onest);
+      margin-right: 4px;
+    }
+
+    & a {
+      @include font-base(12px, 400, 16.8px, normal, $onest);
+      text-decoration: none;
+      color: #526EFF;
+    }
+  }
+}

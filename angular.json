@@ -3,21 +3,22 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "coa": {
+    "vol": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
+          "prefix": "vol",
           "style": "scss"
         }
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "vol",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/coa",
+            "outputPath": "dist/vol",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "coa:build:production"
+              "buildTarget": "vol:build:production"
             },
             "development": {
-              "buildTarget": "coa:build:development"
+              "buildTarget": "vol:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "coa:build"
+            "buildTarget": "vol:build"
           }
         },
         "test": {
@@ -94,8 +95,22 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

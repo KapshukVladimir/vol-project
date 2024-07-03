@@ -9,3 +9,27 @@
 ) {
   font: $font-weight $font-style #{$size}/#{$height $font-family};
 }
+
+@mixin svg-stroke($color) {
+  &::ng-deep svg {
+    & path {
+      stroke: $color;
+    }
+  }
+}
+
+@mixin svg-fill($color) {
+  &::ng-deep svg {
+    & path {
+      fill: $color;
+    }
+  }
+}
+
+@mixin svg-fill-first-path($color) {
+  &::ng-deep svg {
+    & path:first-child {
+      fill: $color;
+    }
+  }
+}

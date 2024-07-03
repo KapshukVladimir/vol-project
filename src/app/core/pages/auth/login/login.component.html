@@ -1,0 +1,53 @@
+<div class="login">
+  <div class="login__wrapper">
+    <div class="login__logo">
+      <img src="../../../../../assets/images/svg/logo.svg" alt="logo" />
+    </div>
+    <div class="login__btn">
+      <button volButton (click)="navigateToRegistration()">Sign Up</button>
+    </div>
+  </div>
+
+  <div class="login__form-wrapper">
+    <h2 class="login__form-title">Sign in to access your account</h2>
+
+    <form class="login__form" [formGroup]="formGroup">
+      <div class="login__form-field">
+        <div class="login__form-field-label">Email ID</div>
+        <input
+          volInput
+          formControlName="email"
+          [errorMessage]="emailErrorMessage"
+          class="login__form-field-input"
+          type="text"
+        />
+      </div>
+
+      <div class="login__form-field">
+        <div class="login__form-field-label">Password</div>
+        <input
+          volInput
+          formControlName="password"
+          [errorMessage]="passwordErrorMessage"
+          class="login__form-field-input"
+          type="password"
+        />
+      </div>
+    </form>
+
+    <div class="login__login-btn">
+      <button volButton (click)="login()">Login</button>
+    </div>
+
+    <div class="login__change-page">
+      <p>Don’t have am account?</p>
+      <button
+        volButton
+        (click)="navigateToRegistration()"
+        [color]="'transparent'"
+      >
+        Sign Up
+      </button>
+    </div>
+  </div>
+</div>

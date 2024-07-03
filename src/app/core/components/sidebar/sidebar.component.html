@@ -1,0 +1,22 @@
+<aside class="sidebar">
+  <div class="sidebar__logo">
+    <img class="header__img" src="assets/images/svg/logo.svg" />
+  </div>
+  <ul class="sidebar__menu">
+    @for (item of sidebarInfo; track item) {
+      <li class="sidebar__item">
+        <a
+          class="sidebar__link"
+          [routerLink]="item.routerPath"
+          [routerLinkActive]="['active']"
+        >
+          <vol-icon
+            class="sidebar__vol-icon"
+            [name]="item.icon"
+            [ngClass]="[item.icon]"
+          ></vol-icon>
+        </a>
+      </li>
+    }
+  </ul>
+</aside>

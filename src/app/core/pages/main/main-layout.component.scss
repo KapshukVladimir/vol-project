@@ -1,0 +1,27 @@
+@import "../../shared/styles/index";
+
+.container {
+  height: 97vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 124px 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: $white;
+  padding: 1rem;
+  z-index: 2;
+  position: relative;
+  height: 100%;
+}
+
+.main-content {
+  grid-area: main;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  z-index: 0; /* Main content below others */
+}

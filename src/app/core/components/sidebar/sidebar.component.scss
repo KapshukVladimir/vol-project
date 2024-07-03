@@ -1,0 +1,76 @@
+@import "../../shared/styles/index";
+
+.sidebar {
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0;
+  }
+
+  &__menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__link {
+    display: flex;
+    padding: 11px 20px;
+    align-self: center;
+    text-decoration: none;
+    transition: background-color .2s linear;
+    border-radius: 12px;
+
+    &:hover {
+      background-color: $red;
+
+      & .sidebar__vol-icon {
+        &.dashboard,
+        &.notification,
+        &.people,
+        &.clock,
+        &.settings, {
+          @include svg-fill($white);
+        }
+
+        &.exit {
+          @include svg-stroke($white)
+        }
+      }
+    }
+
+    &.active {
+      background-color: $red;
+      & .sidebar__vol-icon {
+        &.dashboard,
+        &.people,
+        &.clock,
+        &.settings, {
+          @include svg-fill($white);
+        }
+
+        &.exit {
+          @include svg-stroke($white)
+        }
+
+        &.notification {
+          @include svg-fill($white)
+        }
+      }
+    }
+
+
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "verbose": true,
+  "srcFiles": ["./src/app/core/shared/icons/*.svg"],
+  "outputDirectory": "./libs/vol-icons",
+  "fileName": "vol-icons",
+  "interfaceName": "IVolIcon",
+  "typeName": "TVolIcon",
+  "prefix": "volIcons",
+  "exportCompleteIconSet": true,
+  "svgoConfig": {
+    "plugins": ["cleanupAttrs"]
+  }
+}

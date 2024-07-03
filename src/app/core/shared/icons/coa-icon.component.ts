@@ -7,29 +7,32 @@ import {
   Input,
   Optional,
 } from '@angular/core';
+import { VolIconsRegistryService } from './coa-icons-registry.service';
+import { TVolIcon } from './coa-icons';
 
 //import { epIcon } from './ep-icons';
 //import { EpIconsService } from './ep-icons.service';
 
 @Component({
-  selector: 'coa-icon',
-  template: ``,
+  selector: 'vol-icon',
+  template: `<ng-content></ng-content>`,
+  standalone: true,
   styles: [
     ':host::ng-deep svg{display: flex; justify-content: center; align-items: center}',
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EpIconComponent {
+export class VolIconComponent {
   private svgIcon: SVGElement | undefined;
 
   constructor(
     @Optional() @Inject(DOCUMENT) private document: Document,
     public element: ElementRef,
-    private epIconsService: EpIconsService,
+    private epIconsService: VolIconsRegistryService,
   ) {}
 
   @Input()
-  set name(iconName: epIcon) {
+  set name(iconName: TVolIcon) {
     if (this.svgIcon) {
       this.element.nativeElement.removeChild(this.svgIcon);
     }
