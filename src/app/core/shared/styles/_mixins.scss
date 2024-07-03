@@ -1,0 +1,11 @@
+@import 'vars';
+
+@mixin font-base(
+  $size: 14px,
+  $font-weight: 400,
+  $height: 1.4,
+  $font-style: normal,
+  $font-family: $onest
+) {
+  font: $font-weight $font-style #{$size}/#{$height $font-family};
+}

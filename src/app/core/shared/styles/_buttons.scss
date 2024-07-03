@@ -1,0 +1,19 @@
+@import "vars";
+@import "mixins";
+
+
+.coa-button {
+  @include font-base(15px, 600, 20px, normal, $onest);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  white-space: nowrap;
+  border: none;
+  border-radius: 5px;
+  background-color: $red;
+  color: $white;
+  transition: all .2s ease-in;
+  cursor: pointer;
+}
